@@ -2,6 +2,7 @@ package com.riya.bankapp.banking_app.entitites;
 
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
+import javax.validation.constraints.Positive;
 import javax.persistence.*;
 
 import lombok.*;
@@ -30,6 +31,7 @@ public class Transaction {
     @Column(unique = true)
     private String targetAccountNumber;
     
+    @Positive(message = "Amount should be positive")
     private double amount;
     private LocalDate transactionDate;
 

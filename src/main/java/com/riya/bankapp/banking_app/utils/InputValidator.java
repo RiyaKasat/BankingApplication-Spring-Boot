@@ -22,11 +22,6 @@ public class InputValidator {
         return constants.ACCOUNT_NUMBER_PATTERN.matcher(accountNumber).find();
     }
 
-    // public static boolean validateCurrentAccountBalance(String accountNumber)
-    // {
-    //     Account account = accountService.getAccountDetails(accountNumber);
-    //     return (account.getCurrentBalance()>=0 && account.getCurrentBalance()<= 100000) ? true: false;
-    // }
 
     public static boolean checkIfValidTransaction(Transaction transaction) {
 
