@@ -4,12 +4,12 @@ import lombok.*;
 
 @Getter
 @Setter
-public class ResourceNotFoundException extends RuntimeException {
+public class InvalidInputException extends RuntimeException {
     String resourceName;
     String fieldName;
-    long fieldValue;
+    double fieldValue;
 
-    public ResourceNotFoundException(String resourceName, String fieldName, long fieldValue)
+    public InvalidInputException(String resourceName, String fieldName, double fieldValue)
     {
         super(String.format("%s not found with %s : %s", resourceName, fieldName, fieldValue));
         this.resourceName = resourceName;

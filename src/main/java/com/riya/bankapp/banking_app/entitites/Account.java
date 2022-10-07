@@ -21,21 +21,20 @@ public class Account {
     private Long account_id;
 
     @Column(unique = true)
-    private String account_no;
+    private String accountNumber;
 
     private double currentBalance;
     private String ownername;
 
     private String bankName;
     
+    public Account(){}
     public Account(String accountNumber, String ownerName, double d, String bankName)
     {
-        this.account_no = accountNumber;
+        this.accountNumber = accountNumber;
         this.ownername= ownerName;
         this.currentBalance = d;
         this.bankName = bankName;
     }
-    public Account orElseThrow(Object object) {
-        return null;
-    }
+   
 }

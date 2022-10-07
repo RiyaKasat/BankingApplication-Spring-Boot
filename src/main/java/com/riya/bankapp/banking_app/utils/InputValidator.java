@@ -23,17 +23,24 @@ public class InputValidator {
     }
 
 
-    public static boolean checkIfValidTransaction(Transaction transaction) {
+    public static boolean checkIfValidTransaction(Transaction transaction, String transactionType) {
 
-        if (!isAccountNumberValid(transaction.getSourceAccountNumber()))
+        if(!transactionType.equals("TRANSFER" ))
+        {
+            if (!isAccountNumberValid(transaction.getSourceAccountNumber()))
             return false;
-
-        if (!isAccountNumberValid(transaction.getTargetAccountNumber()))
+        }
+        
+        
+        else
+        {
+        if (!isAccountNumberValid(transaction.getTargetAccountNumber()) && !isAccountNumberValid(transaction.getSourceAccountNumber()))
             return false;
 
         if (transaction.getSourceAccountNumber().equals(transaction.getTargetAccountNumber()))
             return false;
 
+        }
         return true;
     }
 }

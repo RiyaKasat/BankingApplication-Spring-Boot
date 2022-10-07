@@ -25,14 +25,13 @@ public class Transaction {
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator="transaction_seq")
     private Long transactionId;
 
-    @Column(unique = true)
     private String sourceAccountNumber;
 
-    @Column(unique = true)
     private String targetAccountNumber;
     
     @Positive(message = "Amount should be positive")
     private double amount;
+    
     private LocalDate transactionDate;
 
     private String transactionType;
